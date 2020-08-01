@@ -1,18 +1,32 @@
 <div>
     <!-- Search Info Section Start -->
     <div>
+        <p>Modify Search Panel</p>
     </div>
     <!-- Search Info Section End -->
 
+    <!-- Flight Search Results Section Start  -->
+    <div>
+        <div *ngIf="flightMappingType==='Combined'">
+            <p>Combo Flight Search Results Section </p>
+            <ul>
+                <li *ngFor="let itineraryItem  of comboFlightSearchResults">
+                    <app-itenary [itinerary]="itineraryItem"></app-itenary>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="flightMappingType!='Combined'">
+            <p>Separeated Flight Search Results Section </p>
+        </div>
+
+
+    </div>
+    <!-- Flight Search Results Section End  -->
+
     <!-- Filter Section Start -->
     <div>
-
+        <p>Filter Section</p>
     </div>
     <!-- Filter Section End -->
 
-    <!-- Flight Search Results Section Start  -->
-    <div>
-    </div>
-    <!-- Flight Search Results Section End  -->
-    
 </div>
