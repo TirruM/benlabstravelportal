@@ -1,0 +1,80 @@
+<div class="card traveller-wrapper">
+    <!-- Traveler Input -->
+    <div class="card-header">
+        <span>Travellers</span>
+        <div class="close-btn">
+            <i class="fa fa-close"></i>
+        </div>
+    </div>
+    <div class="card-content">
+        <!-- Adult Count Selection Start -->
+        <div class="traveller_count">
+            <div class="label">
+                <div class="main">Adult</div>
+                <div class="sub">(12+yr)</div>
+            </div>
+            <div class="counter_items">
+                <ul>
+                    <!-- [ngClass]="{'selected': count===0}" -->
+                    <li *ngFor="let count of travellerCount|slice:1:travellerCount.length;let i= index;"
+                        [ngClass]="{'selected': travellerClassInfo.adultCount===i+1,'disaled-counter':travellersCount+count>9&& i!=0}"
+                        (click)="onSelectTravellerCount(count,'ADT')">
+                        <span>{{count}} </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Adult Count Selection Start -->
+
+        <!-- Child Count Selection Start -->
+        <div class="traveller_count">
+            <div class="label">
+                <div class="main">Child</div>
+                <div class="sub">(2-11 yr)</div>
+            </div>
+            <div class="counter_items">
+                <ul class="items">
+                    <li class="item" *ngFor="let count of travellerCount;let i = index;"
+                        [ngClass]="{'selected': travellerClassInfo.childCount===i,'disaled-counter':travellersCount+count>9}"
+                        (click)="onSelectTravellerCount(count,'CHD')">
+                        <span>{{count}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Child Count Selection End -->
+
+        <!-- Infant Count Selection Start -->
+        <div class="traveller_count">
+            <div class="label">
+                <div class="main">Infant</div>
+                <div class="sub">(0-2 yr)</div>
+            </div>
+            <div class="counter_items">
+                <ul>
+                    <li *ngFor="let count of travellerCount;let i = index;"
+                        [ngClass]="{'selected': travellerClassInfo.infantCount===i}"
+                        (click)="onSelectTravellerCount(count,'INF')">
+                        <span>{{count}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Infant Count Selection End -->
+
+    </div>
+
+    <!-- Class Input -->
+    <div class="card-header">
+        <span>Class</span>
+    </div>
+    <div class="card-content">
+        <ul>
+            <li *ngFor="let class of classType;let i= index;">
+                <input type="radio" value="{{class}}" checked='{{i==0?true:false}}'
+                    /><span>{{class |lowercase}}</span>
+            </li>
+        </ul>
+    </div>
+
+</div>

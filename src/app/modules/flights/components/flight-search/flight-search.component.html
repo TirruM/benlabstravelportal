@@ -1,0 +1,65 @@
+<!-- <p-dropdown [options]="books" [(ngModel)]="selectedBook" optionLabel="name"></p-dropdown> -->
+<div class="flight-search-wrapper">
+    <form [formGroup]="flight_search_form">
+        <div class="ui-fluid p-formgrid p-grid">
+            <div class="p-field p-col">
+                <div class="origin_input">
+                    <div>
+                        <input type="text" pInputText formControlName="origin" placeholder="Origin"
+                        (focus)="toggleOrigin()">
+                         (focusout)="toggleOrigin()">
+                    </div>
+                    <div class="origin_picker" *ngIf="isOriginOpen">
+                        <app-airport-picker></app-airport-picker>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-field p-col">
+                <!--  <p-autoComplete formControlName="destination" [suggestions]="radioDevicesList"
+                    (completeMethod)="searchAvailableRadioList($event.query)" emptyMessage="No data " field="text"
+                    clearable appendTo="body">
+                </p-autoComplete> -->
+
+                <div class="destination_input">
+                    <div  >
+                        <input type="text" pInputText formControlName="destination" placeholder="Destination"
+                        (focusout)="isDestinationOpen=!isDestinationOpen"
+                        (focus)="isDestinationOpen=!isDestinationOpen"
+                       >
+                       <!-- <a (click)="toggleDestination()">Destination</a> -->
+                    </div>
+                   
+                    <div class="destination_picker" *ngIf="isDestinationOpen">
+                        <app-airport-picker></app-airport-picker>
+                    </div>
+                </div>
+              
+
+            </div>
+            <div class="p-field p-col">
+                <p-calendar formControlName="dapature_date" placeholer="Depature"></p-calendar>
+            </div>
+            <div class="p-field p-col">
+                <p-calendar formControlName="return_date"></p-calendar>
+            </div>
+            <div class="p-field p-col">
+                <div class="passenger_input">
+                    <div>
+                        <a (click)="onClickTravellerForm()">1 passenger,economy</a>
+                    </div>
+                    <div class="traveller-list" *ngIf="isTravellerModalVisible">
+                        <app-traveller-class-selection [travellerClassInfo]="travellerClassObj"
+                            (selectedTravellerClass)="onHandingTravellerClassInfo($event)">
+                        </app-traveller-class-selection>
+                    </div>
+                </div>
+            </div>
+            <div class="p-field p-col">
+                <button pButton type="button" label="Search" (click)="onFlightSearch()"></button>
+            </div>
+
+        </div>
+
+    </form>
+</div>

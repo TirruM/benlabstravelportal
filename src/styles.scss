@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 2em;
+    font-family: cerapro-regular, sans-serif;
+}
+
+.card{
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background-color: #FFF;
+    border-radius: 2px;
+}
+
+ui-menubar {
+    border: 0px !important;
+}
+.ui-menubar-root-list {
+    padding-left: 32px !important;
+}
+
+.ui-carousel-content {
+    overflow: hidden !important;
+    .ui-carousel-container {
+        height: 350px !important;
+    }
+}
+.ui-carousel-dots-container{
+    display: none !important;
+}
+img#logo {
+    position: absolute;
+    left: 25px;
+    left: 46px;
+    top: 50px;
+}

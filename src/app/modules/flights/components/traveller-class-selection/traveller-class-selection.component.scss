@@ -1,0 +1,84 @@
+.traveller-wrapper {
+    .card-header {
+        padding: 10px 25px;
+        background: #fef9f7;
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 500;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        .close-btn {
+            font-size: 12px;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+    }
+
+    .card-content {
+        padding: 10px 25px;
+        ul{
+            // display: flex;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        .traveller_count {
+            margin: 10px 0;
+            display: flex;
+            .label {
+                width: 10%;
+                margin-right: 25px;
+                color: #999;
+                .main {
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+                .sub {
+                    font-size: 12px;
+                }
+            }
+            .counter_items {
+                ul {
+                    display: flex;
+                    list-style: none;
+                    padding: 0px;
+                    margin: 0px;
+                    li {
+                        font-size: 16px;
+                        width: 32px;
+                        cursor: pointer;
+                        height: 32px;
+                        // padding: 10px 10px;
+                        text-align: center;
+                    }
+                    li:hover {
+                        color: #ec5b24;
+                        border: 1px solid #ec5b24;
+                    }
+
+                    .selected {
+                        color: #ec5b24;
+                        border: 1px solid #ec5b24;
+                    }
+                    .disaled-counter {
+                        cursor: not-allowed;
+                        color: #aaa!important;
+                        border: none!important;
+                    }
+                }
+                .item {
+                    font-size: 16px;
+                    width: 32px;
+                    cursor: pointer;
+                    height: 32px;
+                    padding: 10px 10px;
+                }
+
+                span:hover .selected {
+                    color: #ec5b24;
+                    border: 1px solid #ec5b24;
+                }
+            }
+        }
+    }
+}

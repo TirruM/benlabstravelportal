@@ -1,0 +1,32 @@
+<div class="flight-container">
+    <div class="flight-search-section">
+        <!-- Carousel Section start -->
+        <div class="carousel-section">
+            <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true"
+                [responsiveOptions]="responsiveOptions" [autoplayInterval]="10000">
+
+                <ng-template let-car pTemplate="item">
+                    <!-- <div class="car-details"> -->
+                    <div class="p-grid p-nogutter">
+                        <div class="p-col-12 ">
+                            <div>{{car.id}}</div>
+                            <img [src]="car.path">
+
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </ng-template>
+            </p-carousel>
+        </div>
+        <!-- Carousel Section End -->
+
+        <!-- Search Panel Section Start -->
+        <div class="search-panel-section">
+            <app-flight-search [pageLocation]="pageLocation"></app-flight-search>
+        </div>
+    </div>
+
+
+
+    <!-- Search Panel Section End -->
+</div>
